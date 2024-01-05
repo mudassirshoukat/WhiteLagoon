@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiteLagoon.Web", "WhiteLagoon.Web\WhiteLagoon.Web.csproj", "{0B504A5C-FD10-4E63-920C-EB4001E66121}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhiteLagoon.Web", "WhiteLagoon.Web\WhiteLagoon.Web.csproj", "{0B504A5C-FD10-4E63-920C-EB4001E66121}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiteLagoon.Domain", "WhiteLagoon.Domain\WhiteLagoon.Domain.csproj", "{302396F6-E8A5-495F-9665-2F4537D00996}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiteLagoon.Application", "WhiteLagoon.Application\WhiteLagoon.Application.csproj", "{698E253B-D182-4D85-9FEC-3572DB46972C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiteLagoon.Infrastructure", "WhiteLagoon.Infrastructure\WhiteLagoon.Infrastructure.csproj", "{FDC2E1EA-30E3-413F-ABED-C1A6555493B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{0B504A5C-FD10-4E63-920C-EB4001E66121}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B504A5C-FD10-4E63-920C-EB4001E66121}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B504A5C-FD10-4E63-920C-EB4001E66121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{302396F6-E8A5-495F-9665-2F4537D00996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{302396F6-E8A5-495F-9665-2F4537D00996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{302396F6-E8A5-495F-9665-2F4537D00996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{302396F6-E8A5-495F-9665-2F4537D00996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{698E253B-D182-4D85-9FEC-3572DB46972C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{698E253B-D182-4D85-9FEC-3572DB46972C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{698E253B-D182-4D85-9FEC-3572DB46972C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{698E253B-D182-4D85-9FEC-3572DB46972C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC2E1EA-30E3-413F-ABED-C1A6555493B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC2E1EA-30E3-413F-ABED-C1A6555493B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC2E1EA-30E3-413F-ABED-C1A6555493B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC2E1EA-30E3-413F-ABED-C1A6555493B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
