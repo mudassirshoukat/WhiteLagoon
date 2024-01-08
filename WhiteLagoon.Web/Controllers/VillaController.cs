@@ -22,24 +22,73 @@ namespace WhiteLagoon.Web.Controllers
 
       public IActionResult Create()
       {
-        
+
          return View();
       }
 
       [HttpPost]
       public IActionResult Create(Villa villa)
       {
-            if (villa.Name==villa.Description)
-            {//custom validation
+         if (villa.Name == villa.Description)
+         {//custom validation
             ModelState.AddModelError("Description", "Description Should Not Be Same as Name");
-            }
-            if (ModelState.IsValid)
+         }
+         if (ModelState.IsValid)
          {
             context.Villas.Add(villa);
             context.SaveChanges();
             return RedirectToAction("Index");
          }
          return View();
+      }
+
+      //[HttpPut("{villaId}")]
+      public IActionResult Update( int villaId)
+      {
+         Villa? villa= context.Villas.FirstOrDefault(x=>x.Id == villaId);
+         if (villa == null) return RedirectToAction("Error", "Home");
+       
+         return View(villa);
+      }
+
+
+      [HttpPost]
+      public IActionResult Update(Villa villa)
+      {
+         if (ModelState.IsValid)
+         {
+            
+            context.Villas.Update(villa);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+         }
+         return View();
+      }
+
+
+
+      //[HttpDelete("{villaId}")]
+      public  IActionResult Delete(int villaId)
+      {
+         var villa= context.Villas.FirstOrDefault( x=>x.Id == villaId); if (villa == null) 
+            return RedirectToAction("Error","Home");
+        
+
+         return View(villa);
+      }
+
+      [HttpPost]
+      public async Task<IActionResult> Delete(Villa villa)
+      {
+         Villa? villafromdb = context.Villas.FirstOrDefault(x => x.Id == villa.Id);
+         if (villafromdb is not null)
+         {
+            context.Villas.Remove(villafromdb);
+            await context.SaveChangesAsync();
+            return RedirectToAction("Index");
+         }
+         return RedirectToAction("Error","Home");
+         
       }
 
    }
