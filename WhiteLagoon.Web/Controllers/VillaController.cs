@@ -37,7 +37,8 @@ namespace WhiteLagoon.Web.Controllers
          {
             context.Villas.Add(villa);
             context.SaveChanges();
-            return RedirectToAction("Index");
+                TempData["success"] = "New Villa Has Been Added SuccessFully";
+                return RedirectToAction("Index");
          }
          return View();
       }
@@ -60,7 +61,8 @@ namespace WhiteLagoon.Web.Controllers
             
             context.Villas.Update(villa);
             context.SaveChanges();
-            return RedirectToAction("Index");
+                TempData["success"] = "Villa Has Been Updated SuccessFully";
+                return RedirectToAction("Index");
          }
          return View();
       }
@@ -70,7 +72,8 @@ namespace WhiteLagoon.Web.Controllers
       //[HttpDelete("{villaId}")]
       public  IActionResult Delete(int villaId)
       {
-         var villa= context.Villas.FirstOrDefault( x=>x.Id == villaId); if (villa == null) 
+         var villa= context.Villas.FirstOrDefault( x=>x.Id == villaId); 
+            if (villa == null) 
             return RedirectToAction("Error","Home");
         
 
@@ -85,9 +88,11 @@ namespace WhiteLagoon.Web.Controllers
          {
             context.Villas.Remove(villafromdb);
             await context.SaveChangesAsync();
+                TempData["success"] = "Villa Has Been Deleted SuccessFully";
             return RedirectToAction("Index");
          }
-         return RedirectToAction("Error","Home");
+            TempData["error"] = "Villa Can NotBe Deleted";
+            return RedirectToAction("Error","Home");
          
       }
 
