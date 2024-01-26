@@ -6,6 +6,7 @@ namespace WhiteLagoon.Infrastructure.Data
     public class ApplicationDbContext : DbContext
     {
         public DbSet<Villa> Villas { get; set; }
+        public DbSet<VillaNumber> VillaNumbers { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
@@ -14,6 +15,8 @@ namespace WhiteLagoon.Infrastructure.Data
         {
 
             base.OnModelCreating(Builder);
+
+
             Builder.Entity<Villa>().HasData(
                   new Villa
                   {
@@ -46,7 +49,61 @@ namespace WhiteLagoon.Infrastructure.Data
                       SqFt = 750,
                   }
                 );
-        }
+
+
+            Builder.Entity<VillaNumber>().HasData(
+                new VillaNumber
+                {
+                    Villa_Number = 101,
+                    VillaId = 1
+                },
+
+                 new VillaNumber
+                 {
+                     Villa_Number = 102,
+                     VillaId = 1
+                 },
+
+                  new VillaNumber
+                  {
+                      Villa_Number = 103,
+                      VillaId = 1
+                  },
+                   new VillaNumber
+                   {
+                       Villa_Number = 201,
+                       VillaId = 2
+                   },
+                    new VillaNumber
+                    {
+                        Villa_Number = 202,
+                        VillaId = 2
+                    },
+                     new VillaNumber
+                     {
+                         Villa_Number = 203,
+                         VillaId = 2
+                     },
+
+                     new VillaNumber
+                     {
+                         Villa_Number = 301,
+                         VillaId = 3
+                     },
+                      new VillaNumber
+                      {
+                          Villa_Number = 302,
+                          VillaId = 3
+                      },
+                       new VillaNumber
+                       {
+                           Villa_Number = 303,
+                           VillaId = 3
+                       }
+
+                );
+
+        }// OnModelCreating
 
 
 

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GithubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj": {}
+    "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj": {}
   },
   "projects": {
-    "C:\\GithubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj": {
+    "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GithubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj",
+        "projectUniqueName": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj",
         "projectName": "WhiteLagoon.Domain",
-        "projectPath": "C:\\GithubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj",
-        "packagesPath": "C:\\Users\\Mudassir\\.nuget\\packages\\",
-        "outputPath": "C:\\GithubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\obj\\",
+        "projectPath": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Mudassir\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,6 +51,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

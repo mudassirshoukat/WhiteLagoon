@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GithubProjects\\WhiteLagoon\\WhiteLagoon.Application\\WhiteLagoon.Application.csproj": {}
+    "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Application\\WhiteLagoon.Application.csproj": {}
   },
   "projects": {
-    "C:\\GithubProjects\\WhiteLagoon\\WhiteLagoon.Application\\WhiteLagoon.Application.csproj": {
+    "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Application\\WhiteLagoon.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GithubProjects\\WhiteLagoon\\WhiteLagoon.Application\\WhiteLagoon.Application.csproj",
+        "projectUniqueName": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Application\\WhiteLagoon.Application.csproj",
         "projectName": "WhiteLagoon.Application",
-        "projectPath": "C:\\GithubProjects\\WhiteLagoon\\WhiteLagoon.Application\\WhiteLagoon.Application.csproj",
-        "packagesPath": "C:\\Users\\Mudassir\\.nuget\\packages\\",
-        "outputPath": "C:\\GithubProjects\\WhiteLagoon\\WhiteLagoon.Application\\obj\\",
+        "projectPath": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Application\\WhiteLagoon.Application.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Application\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Mudassir\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

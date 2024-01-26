@@ -1486,7 +1486,10 @@
         },
         "runtime": {
           "bin/placeholder/WhiteLagoon.Domain.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -4032,24 +4035,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mudassir\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GithubProjects\\WhiteLagoon\\WhiteLagoon.Infrastructure\\WhiteLagoon.Infrastructure.csproj",
+      "projectUniqueName": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Infrastructure\\WhiteLagoon.Infrastructure.csproj",
       "projectName": "WhiteLagoon.Infrastructure",
-      "projectPath": "C:\\GithubProjects\\WhiteLagoon\\WhiteLagoon.Infrastructure\\WhiteLagoon.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\Mudassir\\.nuget\\packages\\",
-      "outputPath": "C:\\GithubProjects\\WhiteLagoon\\WhiteLagoon.Infrastructure\\obj\\",
+      "projectPath": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Infrastructure\\WhiteLagoon.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Mudassir\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4063,8 +4061,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\GithubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj": {
-              "projectPath": "C:\\GithubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj"
+            "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj": {
+              "projectPath": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj"
             }
           }
         }
