@@ -27,7 +27,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj": {
+                "projectPath": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -141,8 +145,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj": {
-                "projectPath": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Domain\\WhiteLagoon.Domain.csproj"
+              "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.application\\WhiteLagoon.application.csproj": {
+                "projectPath": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.application\\WhiteLagoon.application.csproj"
               }
             }
           }

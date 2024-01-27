@@ -1,0 +1,12 @@
+C:\githubProjects\WhiteLagoon\WhiteLagoon.Domain\bin\Debug\net8.0\WhiteLagoon.Domain.deps.json
+C:\githubProjects\WhiteLagoon\WhiteLagoon.Domain\bin\Debug\net8.0\WhiteLagoon.Domain.dll
+C:\githubProjects\WhiteLagoon\WhiteLagoon.Domain\bin\Debug\net8.0\WhiteLagoon.Domain.pdb
+C:\githubProjects\WhiteLagoon\WhiteLagoon.Domain\obj\Debug\net8.0\WhiteLagoon.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\githubProjects\WhiteLagoon\WhiteLagoon.Domain\obj\Debug\net8.0\WhiteLagoon.Domain.AssemblyInfoInputs.cache
+C:\githubProjects\WhiteLagoon\WhiteLagoon.Domain\obj\Debug\net8.0\WhiteLagoon.Domain.AssemblyInfo.cs
+C:\githubProjects\WhiteLagoon\WhiteLagoon.Domain\obj\Debug\net8.0\WhiteLagoon.Domain.csproj.CoreCompileInputs.cache
+C:\githubProjects\WhiteLagoon\WhiteLagoon.Domain\obj\Debug\net8.0\WhiteLagoon.Domain.sourcelink.json
+C:\githubProjects\WhiteLagoon\WhiteLagoon.Domain\obj\Debug\net8.0\WhiteLagoon.Domain.dll
+C:\githubProjects\WhiteLagoon\WhiteLagoon.Domain\obj\Debug\net8.0\refint\WhiteLagoon.Domain.dll
+C:\githubProjects\WhiteLagoon\WhiteLagoon.Domain\obj\Debug\net8.0\WhiteLagoon.Domain.pdb
+C:\githubProjects\WhiteLagoon\WhiteLagoon.Domain\obj\Debug\net8.0\ref\WhiteLagoon.Domain.dll
