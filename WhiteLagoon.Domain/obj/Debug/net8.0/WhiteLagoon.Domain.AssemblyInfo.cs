@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhiteLagoon.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82f1a05fc864c8c3d001e496edce5a06d933a1f3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+154e70711359777144314d0d91ae506ea6f3950b")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhiteLagoon.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhiteLagoon.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

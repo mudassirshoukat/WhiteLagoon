@@ -33,6 +33,30 @@
       "PackagePath": "staticwebassets\\Images\\Room Images\\7.jpg"
     },
     {
+      "Id": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Web\\wwwroot\\Images\\VillaImages\\3ad6cee1-341e-401f-b7ff-ef337973b94b.jpeg",
+      "PackagePath": "staticwebassets\\Images\\VillaImages\\3ad6cee1-341e-401f-b7ff-ef337973b94b.jpeg"
+    },
+    {
+      "Id": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Web\\wwwroot\\Images\\VillaImages\\46d1137c-e6ad-4d27-a743-9a1bea1eaf7b.png",
+      "PackagePath": "staticwebassets\\Images\\VillaImages\\46d1137c-e6ad-4d27-a743-9a1bea1eaf7b.png"
+    },
+    {
+      "Id": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Web\\wwwroot\\Images\\VillaImages\\5a0dadc9-c535-47b7-82d8-f913198c44bb.jpeg",
+      "PackagePath": "staticwebassets\\Images\\VillaImages\\5a0dadc9-c535-47b7-82d8-f913198c44bb.jpeg"
+    },
+    {
+      "Id": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Web\\wwwroot\\Images\\VillaImages\\718e8265-269d-4443-8c75-636652c89424.jpeg",
+      "PackagePath": "staticwebassets\\Images\\VillaImages\\718e8265-269d-4443-8c75-636652c89424.jpeg"
+    },
+    {
+      "Id": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Web\\wwwroot\\Images\\VillaImages\\c21a13c4-674c-46e9-9c17-63727e77902f.jpeg",
+      "PackagePath": "staticwebassets\\Images\\VillaImages\\c21a13c4-674c-46e9-9c17-63727e77902f.jpeg"
+    },
+    {
+      "Id": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Web\\wwwroot\\Images\\VillaImages\\f57195ed-bbf5-42d9-be1f-967255bdaf26.jpg",
+      "PackagePath": "staticwebassets\\Images\\VillaImages\\f57195ed-bbf5-42d9-be1f-967255bdaf26.jpg"
+    },
+    {
       "Id": "C:\\githubProjects\\WhiteLagoon\\WhiteLagoon.Web\\wwwroot\\Images\\accessDenied.jpg",
       "PackagePath": "staticwebassets\\Images\\accessDenied.jpg"
     },
