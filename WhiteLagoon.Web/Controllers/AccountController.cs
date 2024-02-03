@@ -58,9 +58,6 @@ namespace WhiteLagoon.Web.Controllers
                     model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-
-
-
                     TempData["success"] = "Login Success";
                     if (!string.IsNullOrEmpty(model.RedirectUrl))
                     {
@@ -75,14 +72,8 @@ namespace WhiteLagoon.Web.Controllers
                 {
                     TempData["error"] = "Failed To Login";
                     ModelState.AddModelError("", "Wrong Password");
-
                 }
-
             }
-
-            //Getting All Error and redirating to Same View
-
-
             return View(model);
 
 

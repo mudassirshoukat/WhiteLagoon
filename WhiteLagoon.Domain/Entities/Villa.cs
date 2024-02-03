@@ -28,6 +28,8 @@ namespace WhiteLagoon.Domain.Entities
         public string? ImageUrl { get; set; }
         public DateTime? DateCreated { get; set; }
         public DateTime? DateUpdated { get; set; }
+        [NotMapped]
+        public bool IsAvailable { get; set; } = true;
 
         //Navigation Properties
         [ValidateNever]
