@@ -21,6 +21,10 @@ namespace WhiteLagoon.Infrastructure.Repository
         public IVillaNumberRepository VillaNumberRepo =>  new VillaNumberRepository(context);
         public IAmenityRepository AmenityRepo => new AmenityRepository(context);
 
+        public IBookingRepository BookingRepo => new BookingRepository(context);
+
+        public IApplicationUserRepository AppUserRepo => new ApplicationUserRepository(context);
+
         public bool HasChanges()
         {
             return context.ChangeTracker.HasChanges();
