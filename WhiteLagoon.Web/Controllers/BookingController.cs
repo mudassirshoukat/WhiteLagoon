@@ -19,6 +19,14 @@ namespace WhiteLagoon.Web.Controllers
             this.unitOfWork = unitOfWork;
         }
 
+
+        [Authorize]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+
         [Authorize]
         public IActionResult FinalizeBooking(int villaId, DateOnly checkInDate, int nights)
         {
@@ -48,6 +56,7 @@ namespace WhiteLagoon.Web.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> FinalizeBooking(Booking booking)
         {
             if (ModelState.IsValid)
@@ -108,6 +117,8 @@ namespace WhiteLagoon.Web.Controllers
         }
 
 
+
+        [Authorize]
         public async Task<IActionResult> BookingConfirmation(int bookingId)
         {
             var booking = unitOfWork.BookingRepo.GetSingle(filter: x => x.Id == bookingId);
@@ -121,9 +132,44 @@ namespace WhiteLagoon.Web.Controllers
                     await unitOfWork.BookingRepo.UpdateStripePaymentIDAsync(bookingId, session.Id, session.PaymentIntentId);
                     await unitOfWork.SaveAllAsync();
                 }
-
             }
             return View(bookingId);
         }
+
+
+        [Authorize]
+        public IActionResult BookingDetails(int bookingId) 
+        {
+            var booking= unitOfWork.BookingRepo.GetSingle(z=>z.Id==bookingId,includeProperties:"Villa,User");
+            return View(booking);
+        
+        }
+
+        #region API Calls
+
+        [Authorize]
+        [HttpGet]
+        public IActionResult GetAll(string status)
+        {
+            IEnumerable<Booking> bookings;
+            if (User.IsInRole(SD.Role_Admin))
+            {
+                bookings = unitOfWork.BookingRepo.GetAll(includeProperties: "Villa,User");
+            }
+            else
+            {
+                bookings = unitOfWork.BookingRepo.GetAll(filter: x => x.UserId == User.GetUserId(), includeProperties: "Villa,User");
+            }
+            if (!string.IsNullOrEmpty(status))
+            {
+                bookings = bookings.Where(x => x.Status.ToLower().Equals(status.ToLower()));
+            }
+
+            return Json(new { data = bookings });
+        }
+
+
+
+        #endregion
     }
 }

@@ -1,0 +1,41 @@
+﻿@{
+    var status = Context.Request.Query["status"];
+}
+
+<div class="w-100% card border-0 p-4">
+    <div class="card-header bg-success bg-gradient m-lg-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Booking List</h2>
+            </div>
+        </div>
+
+    </div>
+    <div class="card-body border p-4">
+
+        <div class="d-flex justify-content-end pb-4 pt-2">
+            <ul class="list-group list-group-horizontal-sm">
+
+                @foreach (var bookingStatus in Enum.GetValues(typeof(SD.BookingStatus)))
+                {
+                    var cssClass = status == bookingStatus.ToString() ? "text-white bg-success" : "";
+
+                    <a style="text-decoration:none" asp-controller="booking" asp-action="index"
+                       asp-route-status="@bookingStatus.ToString()">
+                    <li class="list-group-item @cssClass">@bookingStatus</li>
+                    </a>
+                }
+            </ul>
+        </div>
+
+
+        <partial name="_BookingDataTablePartial" />
+    </div>
+
+</div>
+
+
+@section scripts {
+    <script src="~/js/bookings.js"></script>
+
+}

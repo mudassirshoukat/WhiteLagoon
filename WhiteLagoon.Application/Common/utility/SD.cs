@@ -11,5 +11,15 @@
         public const string StatusCompleted = "Completed";
         public const string StatusCancelled = "Cancelled";
         public const string StatusRefunded = "Refunded";
+
+        public enum BookingStatus
+        {
+            Pending,
+            Approved,
+            CheckedIn,
+            Completed,
+            Cancelled,
+            Refunded
+        }
     }
 }

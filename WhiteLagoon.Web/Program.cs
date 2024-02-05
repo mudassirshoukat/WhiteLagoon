@@ -31,6 +31,9 @@ builder.Services.ConfigureApplicationCookie(options => {
     });
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+builder.Services.AddControllers()
+    .AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
+
 
 var app = builder.Build();
 
