@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 using Stripe.Checkout;
@@ -6,6 +7,7 @@ using WhiteLagoon.Application.Common.Interfaces;
 using WhiteLagoon.Application.Common.utility;
 using WhiteLagoon.Domain.Entities;
 using WhiteLagoon.Infrastructure.Extentions;
+using WhiteLagoon.Web.ViewModels;
 
 namespace WhiteLagoon.Web.Controllers
 {
@@ -20,11 +22,14 @@ namespace WhiteLagoon.Web.Controllers
         }
 
 
+
+
         [Authorize]
         public IActionResult Index()
         {
             return View();
         }
+
 
 
         [Authorize]
@@ -55,6 +60,7 @@ namespace WhiteLagoon.Web.Controllers
             return View(booking);
         }
 
+
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> FinalizeBooking(Booking booking)
@@ -65,6 +71,26 @@ namespace WhiteLagoon.Web.Controllers
                 booking.TotalCost = booking.Villa.Price * booking.Nights;
                 booking.Status = SD.StatusPending;
                 booking.BookingDate = DateOnly.FromDateTime(DateTime.Now);
+
+                //check availability of villarooms again
+                var villaList = unitOfWork.VillaRepo.GetAll(includeProperties: "VillaAmenity").ToList();
+                var villaNumbersList = unitOfWork.VillaNumberRepo.GetAll().ToList();
+                var bookedVillas = unitOfWork.BookingRepo.GetAll(u => u.Status == SD.StatusApproved ||
+                u.Status == SD.StatusCheckedIn).ToList();
+
+
+               
+                    int roomAvailable = SD.VillaRoomAvailable_Count
+                        (booking.Villa.Id, villaNumbersList, booking.CheckInDate, booking.Nights, bookedVillas);
+
+                  if (roomAvailable == 0) {
+                    TempData["error"] = "Room Has Been Sold Out!";
+
+                    return RedirectToAction(nameof(FinalizeBooking),new {booking.VillaId,booking.CheckInDate,booking.Nights});
+                }
+            
+
+
 
                 unitOfWork.BookingRepo.Add(booking);
                 await unitOfWork.SaveAllAsync();
@@ -118,6 +144,10 @@ namespace WhiteLagoon.Web.Controllers
 
 
 
+
+
+
+
         [Authorize]
         public async Task<IActionResult> BookingConfirmation(int bookingId)
         {
@@ -128,7 +158,7 @@ namespace WhiteLagoon.Web.Controllers
                 var session = await service.GetAsync(booking.StripeSessionId);
                 if (session.PaymentStatus == "paid")
                 {
-                    await unitOfWork.BookingRepo.UpdateStatusAsync(bookingId, SD.StatusApproved);
+                    await unitOfWork.BookingRepo.UpdateStatusAsync(bookingId, SD.StatusApproved, 0);
                     await unitOfWork.BookingRepo.UpdateStripePaymentIDAsync(bookingId, session.Id, session.PaymentIntentId);
                     await unitOfWork.SaveAllAsync();
                 }
@@ -137,12 +167,73 @@ namespace WhiteLagoon.Web.Controllers
         }
 
 
+
         [Authorize]
-        public IActionResult BookingDetails(int bookingId) 
+        public IActionResult BookingDetails(int bookingId)
         {
-            var booking= unitOfWork.BookingRepo.GetSingle(z=>z.Id==bookingId,includeProperties:"Villa,User");
+            var booking = unitOfWork.BookingRepo.GetSingle(z => z.Id == bookingId, includeProperties: "Villa,User");
+            if (booking.VillaNumber == 0 && booking.Status == SD.StatusApproved)
+            {
+                var availableRooms = AssignVillaNumberByVilla(booking.VillaId);
+                booking.VillaNumbers = unitOfWork.VillaNumberRepo.GetAll(x => x.VillaId == booking.VillaId
+                && availableRooms.Any(u => u == x.Villa_Number)).ToList();
+            }
             return View(booking);
-        
+
+        }
+
+
+        [HttpPost]
+        [Authorize(Roles = SD.Role_Admin)]
+        public async Task<IActionResult> CheckIn(Booking booking)
+        {
+            await unitOfWork.BookingRepo.UpdateStatusAsync(booking.Id, SD.StatusCheckedIn, booking.VillaNumber);
+            await unitOfWork.SaveAllAsync();
+            TempData["success"] = "Booking Updated SuccessFully";
+
+            return RedirectToAction(nameof(BookingDetails),new {bookingId=booking.Id});
+        }
+
+
+        [HttpPost]
+        [Authorize(Roles = SD.Role_Admin)]
+        public async Task<IActionResult> CheckOut(Booking booking)
+        {
+            await unitOfWork.BookingRepo.UpdateStatusAsync(booking.Id, SD.StatusCompleted, booking.VillaNumber);
+            await unitOfWork.SaveAllAsync();
+            TempData["success"] = "Booking Completed SuccessFully";
+
+            return RedirectToAction(nameof(BookingDetails), new { bookingId = booking.Id });
+        }
+
+
+        [HttpPost]
+        [Authorize(Roles = SD.Role_Admin)]
+        public async Task<IActionResult> CancekBooking(Booking booking)
+        {
+            await unitOfWork.BookingRepo.UpdateStatusAsync(booking.Id, SD.StatusCancelled, 0);
+            await unitOfWork.SaveAllAsync();
+            TempData["success"] = "Booking Canceled SuccessFully";
+
+            return RedirectToAction(nameof(BookingDetails), new { bookingId = booking.Id });
+        }
+
+        private List<int> AssignVillaNumberByVilla(int villaId)
+        {
+            List<int> availableRooms = new();
+            var villaNumbers = unitOfWork.VillaNumberRepo.GetAll(x => x.VillaId == villaId);
+            var CheckedInRooms = unitOfWork.BookingRepo.GetAll(x => x.VillaId == villaId && x.Status == SD.StatusCheckedIn)
+                .Select(x => x.VillaNumber);
+
+            foreach (var villaNumber in villaNumbers)
+            {
+                if (!CheckedInRooms.Contains(villaNumber.Villa_Number))
+                {
+                    availableRooms.Add(villaNumber.Villa_Number);
+                }
+            }
+
+            return availableRooms;
         }
 
         #region API Calls

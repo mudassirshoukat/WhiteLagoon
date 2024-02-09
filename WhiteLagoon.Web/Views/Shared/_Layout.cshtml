@@ -27,7 +27,9 @@
                         <li class="nav-item">
                             <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        
+                        @if (User.IsInRole(SD.Role_Admin))
+                        {
+                          
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Content Management
@@ -39,8 +41,14 @@
                                 <li> <a class="dropdown-item" asp-controller="Amenity" asp-action="index">Amenity</a></li>
                                 <li> <a class="dropdown-item" asp-controller="booking" asp-action="index" asp-route-status="@SD.StatusApproved">Bookings</a></li>
                             </ul>
-                        </li>
-                
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="booking" asp-action="Index">ManageBookings</a>
+                            </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

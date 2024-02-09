@@ -20,7 +20,7 @@ namespace WhiteLagoon.Infrastructure.Repository
             context.bookings.Update(booking);
         }
 
-        public async Task UpdateStatusAsync(int bookingId, string bookingStatus)
+        public async Task UpdateStatusAsync(int bookingId, string bookingStatus,int villaNumber=0)
         {
            var booking=await context.bookings.FirstOrDefaultAsync(x=>x.Id==bookingId);
             if (booking != null)
@@ -28,6 +28,7 @@ namespace WhiteLagoon.Infrastructure.Repository
                 booking.Status = bookingStatus;
                 if (bookingStatus == SD.StatusCheckedIn)
                 {
+                    booking.VillaNumber = villaNumber;
                     booking.ActualCheckInDate = DateTime.Now;
                 }
                 if (bookingStatus == SD.StatusCompleted)

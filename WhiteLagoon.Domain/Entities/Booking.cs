@@ -47,7 +47,12 @@ namespace WhiteLagoon.Domain.Entities
         public DateTime ActualCheckOutDate { get; set; }
         public int VillaNumber { get; set; }
 
+
+
         //Navigation Properties
+
+        [NotMapped]
+        public List<VillaNumber>? VillaNumbers { get; set; }
         [ForeignKey("UserId")]
         [ValidateNever]
         public ApplicationUser User { get; set; }

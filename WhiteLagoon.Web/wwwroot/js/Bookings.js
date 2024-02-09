@@ -21,7 +21,7 @@ function loadDataTable(status) {
             { data: "Status", "width": "10%" },
             { data: "CheckInDate", "width": "10%" },
             { data: "Nights", "width": "10%" },
-            { data: "TotalCost", "width": "10%" },
+            { data: "TotalCost", render: $.fn.dataTable.render.number(',', '.', 2), "width": "10%" },
             {
                 data: "Id",
                 "render": function (data) {
