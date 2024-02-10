@@ -59,6 +59,15 @@ namespace WhiteLagoon.Web.Controllers
                 if (result.Succeeded)
                 {
                     TempData["success"] = "Login Success";
+
+                   
+                    if (await userManager.IsInRoleAsync(user,SD.Role_Admin))
+                    {
+                        return RedirectToAction("Index","Dashboard");
+                    }
+                    else
+                    {
+                      
                     if (!string.IsNullOrEmpty(model.RedirectUrl))
                     {
                         return LocalRedirect(model.RedirectUrl);
@@ -66,6 +75,7 @@ namespace WhiteLagoon.Web.Controllers
                     else
                     {
                         return RedirectToAction("Index", "Home");
+                    }
                     }
                 }
                 else
